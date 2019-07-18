@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Pruebas de POO con js</title>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pruebas de POO con js</title>
 
 
-<script type="text/javascript" src="js/jquery-3.4.4.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.4.4.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js/js/bootstrap-4.3.1-dist"></script>
-      <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-  </head>
-  <body>
+  <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+</head>
 
-    <!--Navegacion-->
-    <nav class="navbar navbar-light bg light">
-      <a href="#" class="navbar-brand">Product App</a>
-        </nav>
+<body>
 
-        <!--Aplicacion-->
-        <div class="container">
-          <div id="app" class="row pt-5">
-             <div class="col-md-4">
-               <div class="card">
-                    <div class="card-header">
-                      ADD Products
+  <!--Navegacion-->
+  <nav class="navbar navbar-light bg light">
+    <a href="#" class="navbar-brand">Product App</a>
+  </nav>
 
-                    </div>
-
-                  <form id="product-form" class="card-body" >
-                       <div class="form-group">
-                         <input type="text" id="name" placeholder="Nombre" class="form-control">
-                       </div>
-                       <div class="form-group">
-                         <input type="number" id="price" step="0.01" placeholder="Precio" class="form-control" min="0">
-                       </div>
-                       <div class="form-group">
-                         <input type="date" id="year" placeholder="Año Producto" class="form-control">
-                       </div>
-                       <input type="submit"  value="Grabar" class="btn btn-primary btn-block">
-                  </form>
-
-               </div>
-             </div>
-
-             <div class="col-md-8">
-               <div id="product-list" class="col-md-14">
-
-               </div>
-
-             </div>
-          </div>
-          <div class="">
+  <!--Aplicacion-->
+  <div class="container">
+    <div id="app" class="row pt-5">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            ADD Products
 
           </div>
+    
+          <form id="product-form" class="card-body">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="Nombre" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="number" id="price" step="0.01" placeholder="Precio" class="form-control" min="0">
+            </div>
+            <div class="form-group">
+              <input type="date" id="year" placeholder="Año Producto" class="form-control">
+            </div>
+            <input type="submit" value="Grabar" class="btn btn-primary btn-block">
+          </form>
+
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div id="product-list" class="col-md-14">
+
         </div>
 
-        <script type="text/javascript" src="app.js">
-        </script>
-  </body>
+      </div>
+    </div>
+    <div class="">
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="app.js">
+  </script>
+</body>
+
 </html>

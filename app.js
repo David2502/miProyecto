@@ -1,5 +1,3 @@
-
-
 /*let nombres=['ryan','joe','david'];
 
 for (let i = 0; i < nombres.length; i++) {
@@ -26,7 +24,7 @@ var fecha = new  Date();
 document.write(fecha.getMinutes());*/
 
 
- /*uno=78+3;
+/*uno=78+3;
 document.write(uno);*/
 
 /*n1=30;
@@ -50,19 +48,21 @@ weas("David","Huapaya","Pisconte");*/
 }
 
 NombreApellido("david","Huapaya");*/
+
+//js para PruebasPoo(Programita de productos)
 class Producto {
-  constructor(Nombre,Precio,Fecha) {
-    this.Nombre=Nombre;
-    this.Precio=Precio;
-    this.Fecha=Fecha;
+  constructor(Nombre, Precio, Fecha) {
+    this.Nombre = Nombre;
+    this.Precio = Precio;
+    this.Fecha = Fecha;
   }
 }
 
 class UI {
-  addProducto(product){
-       const ProductList=document.getElementById('product-list')
-       const element = document.createElement('div');
-       element.innerHTML =`
+  addProducto(product) {
+    const ProductList = document.getElementById('product-list')
+    const element = document.createElement('div');
+    element.innerHTML = `
            <div class="card text-center mb-8">
            <div  class="card-body">
                <strong>Producto Name</strong>: ${product.Nombre}
@@ -70,25 +70,26 @@ class UI {
                <strong>Producto Year</strong> : ${product.Fecha}
                <a href="#"  class="btn btn-danger" name="delete">Delete</a>
            </div>
-                     </div>
+            </div>
+                     
 
        `;
-       ProductList.appendChild(element);
+    ProductList.appendChild(element);
 
 
   }
-resetForm(){
-  document.getElementById('product-form').reset();
-}
-
-  deleteProducto(element){
-       if (element.name==='delete') {
-             element.parentElement.parentElement.parentElement.remove();
-             this.Mensaje('Producto Eliminado satisfactoriamente','info');
-       }
+  resetForm() {
+    document.getElementById('product-form').reset();
   }
 
-  Mensaje(message, cssClass){
+  deleteProducto(element) {
+    if (element.name === 'delete') {
+      element.parentElement.parentElement.parentElement.remove();
+      this.Mensaje('Producto Eliminado satisfactoriamente', 'info');
+    }
+  }
+
+  Mensaje(message, cssClass) {
     const div = document.createElement('div');
     div.className = `alert alert-${cssClass}`;
     div.appendChild(document.createTextNode(message));
@@ -96,35 +97,41 @@ resetForm(){
     const container = document.querySelector('.container');
     const app = document.querySelector('#app');
     container.insertBefore(div, app);
-    setTimeout(function(){
-        document.querySelector('.alert').remove();
-    },3000);
+    setTimeout(function() {
+      document.querySelector('.alert').remove();
+    }, 3000);
 
   }
 }
 
 document.getElementById('product-form')
-.addEventListener('submit', function(e){
- const name=document.getElementById('name').value;
- const price=document.getElementById('price').value;
- const year=document.getElementById('year').value;
-   const product = new Producto(name,price,year);
+  .addEventListener('submit', function(e) {
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+    const year = document.getElementById('year').value;
+    const product = new Producto(name, price, year);
 
-   const ui= new UI();
+    const ui = new UI();
 
-   if (name ==='' || price=== '' || year=== '' ) {
-     return ui.Mensaje("complete los campos porfavor",'danger')
+    if (name === '' || price === '' || year === '') {
+      return ui.Mensaje("complete los campos porfavor", 'danger')
 
-   }
-   ui.addProducto(product);
-   ui.resetForm();
-   ui.Mensaje('Producto Agregado satisfactoriamente','success');
-   e.preventDefault();
-});
+    }
+    ui.addProducto(product);
+    ui.resetForm();
+    ui.Mensaje('Producto Agregado satisfactoriamente', 'success');
+    e.preventDefault();
+  });
 
 document.getElementById('product-list')
-.addEventListener('click', function(e){
-  const ui= new UI();
-  ui.deleteProducto(e.target);
+  .addEventListener('click', function(e) {
+    const ui = new UI();
+    ui.deleteProducto(e.target);
 
-});
+  });
+
+  
+
+
+
+
